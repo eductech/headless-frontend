@@ -2,14 +2,20 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { hot } from 'react-hot-loader';
 
-import 'babel-polyfill';
+import './styles/style.scss';
+
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        {this.props.message}
-      </div>
+      <Fragment>
+        <Header />
+        <Hero />
+        <Footer />
+      </Fragment>
     );
   }
 }
@@ -17,4 +23,4 @@ class App extends React.Component {
 const AppWithHot = hot(module)(App);
 
 var mountNode = document.getElementById("app");
-ReactDOM.render(<AppWithHot message="Hello World!" />, mountNode);
+ReactDOM.render(<AppWithHot />, mountNode);
