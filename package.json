@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "prismic-javascript": "^2.0.3",
+    "prismic-reactjs": "^0.3.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-highcharts": "^16.0.2",
