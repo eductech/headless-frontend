@@ -5,7 +5,7 @@ import { structure } from './fetchLinks';
 const API_ENDPOINT = 'https://frontend-spring.cdn.prismic.io/api/v2';
 
 function getApi () {
-    return Prismic.api(API_ENDPOINT);
+  return Prismic.getApi(API_ENDPOINT);
 }
 
 export default async function fetchPage() {
