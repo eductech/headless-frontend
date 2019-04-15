@@ -3,12 +3,7 @@ import ReactDOM from "react-dom";
 import { hot } from 'react-hot-loader';
 
 import fetchPage from './dataService';
-
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Speakers from './components/Speakers';
-import Programs from './components/Programs';
-import Footer from './components/Footer';
+import { findComponent } from './components/components';
 
 import './styles/style.scss';
 
@@ -21,8 +16,8 @@ class App extends React.Component {
   }
 
   async _fetchConfig () {
-    const config = await fetchPage();
-    this.setState({ config });
+    const { content } = await fetchPage();
+    this.setState({ content });
   }
 
   _renderSkeleton () {
@@ -31,22 +26,28 @@ class App extends React.Component {
     );
   }
 
-  render() {
-    const { config } = this.state;
+  _renderComponent = ({ block: blockData }) => {
+    console.log(blockData);
+    
+    const { key, Component, props } = findComponent(blockData);
 
-    if (!config) {
+    if (Component) {
+      return <Component key={key} {...props} />
+    }
+  }
+
+  render() {
+    const { content } = this.state;
+
+    if (!content) {
       return this._renderSkeleton();
     }
 
-    console.log(config);
-
+    console.log(content);
+    
     return (
       <Fragment>
-        <Header />
-        <Hero />
-        <Speakers />
-        <Programs />
-        <Footer />
+        {content.map(this._renderComponent)}
       </Fragment>
     );
   }
