@@ -1,13 +1,25 @@
+import Header from './Header';
 import Hero from './Hero';
+import Footer from './Footer';
 
 import {
-  hero
+  header,
+  hero,
+  footer
 } from '../models';
 
 const components = {
+  header: {
+    component: Header,
+    props: header
+  },
   hero: {
     component: Hero,
     props: hero
+  },
+  footer: {
+    component: Footer,
+    props: footer
   }
 }
 

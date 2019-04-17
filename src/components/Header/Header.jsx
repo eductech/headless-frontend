@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header(props) {
+export default function Header({ title, links }) {
   return (
     <header className="site-navbar py-3" role="banner">
       <div className="container-fluid">
@@ -11,9 +11,11 @@ export default function Header(props) {
           <div className="col-10">
             <nav className="site-navigation position-relative text-right" role="navigation">
               <ul className="site-menu js-clone-nav mx-auto">
-                <li className="active"><a href="#hero">Home</a></li>
-                <li><a href="#">Speakers</a></li>
-                <li><a href="#">News</a></li>
+                {links && links.map(({title, ref, id}) => {
+                  return (
+                    <li key={id}><a href={ref}>{title}</a></li>
+                  )
+                })}
               </ul>
             </nav>
           </div>

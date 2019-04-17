@@ -1,0 +1,1 @@
+export { getLink } from './utils';
