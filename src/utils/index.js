@@ -1,1 +1,1 @@
-export { getLink } from './utils';
+export { getLink, getSpeaker, getProgram } from './utils';

@@ -1,11 +1,13 @@
 import Header from './Header';
 import Hero from './Hero';
+import Speakers from './Speakers';
 import Footer from './Footer';
 
 import {
   header,
   hero,
-  footer
+  footer,
+  speakers
 } from '../models';
 
 const components = {
@@ -16,6 +18,10 @@ const components = {
   hero: {
     component: Hero,
     props: hero
+  },
+  speakers: {
+    component: Speakers,
+    props: speakers
   },
   footer: {
     component: Footer,

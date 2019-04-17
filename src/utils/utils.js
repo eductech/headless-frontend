@@ -5,3 +5,15 @@ export function getLink(link) {
     id: link.id
   };
 }
+
+export function getSpeaker(speaker) {
+  return {
+
+  };
+}
+
+export function getProgram(program) {
+  return {
+    
+  };
+}
