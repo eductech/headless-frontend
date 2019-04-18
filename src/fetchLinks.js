@@ -16,6 +16,12 @@ const speakers = [
   'speakers.speakers_list'
 ];
 
+const programs = [
+  'programs.title',
+  'programs.description',
+  'programs.programs_list'
+];
+
 const footer = [
   'footer.description',
   'footer.links'
@@ -51,6 +57,7 @@ const structure = [
   ...header,
   ...hero,
   ...speakers,
+  ...programs,
   ...footer,
   ...link,
   ...programs_li,

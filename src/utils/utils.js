@@ -6,17 +6,25 @@ export function getLink(link) {
   };
 }
 
-export function getSpeaker({about, title, name, photo}) {
+export function getSpeaker({data, id}) {
   return {
-    about: about[0].text,
-    title,
-    name: name[0].text,
-    photo: photo.url 
+    id,
+    about: getText(data.about),
+    title: data.title,
+    name: getText(data.name),
+    photo: data.photo.url 
   };
 }
 
-export function getProgram(program) {
+export function getProgram({data, id}) {
   return {
-    
+    id,
+    speaker: data.speaker,
+    title: getText(data.title),
+    date: new Date(data.time)
   };
+}
+
+function getText(textObject) {
+  return textObject[0].text;
 }

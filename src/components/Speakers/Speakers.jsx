@@ -1,10 +1,8 @@
 import React from 'react';
 
 export default function Speakers({title, description, speakers}) {
-  console.log(speakers);
-  
   return (
-    <div className="site-section">
+    <div className="site-section" id="speakers">
       <div className="container">
         <div className="row mb-5">
           <div className="col-lg-4">
@@ -17,15 +15,16 @@ export default function Speakers({title, description, speakers}) {
           </div>
         </div>
 
-        {speakers.map(({about, name, photo, title}, i) => {
+        {speakers.map(({about, name, photo, title, id}, i) => {
+          var odd = i % 2 == 0 ? true : false;
           return (
-            <div className="row align-items-center speaker">
-              <div className="col-lg-6 mb-5 mb-lg-0">
+            <div key={id} className="row align-items-center speaker">
+              <div className={"col-lg-6 mb-5 mb-lg-0" + (odd ? '' : ' order-lg-2')}>
                 {photo && <img src={photo} alt="Image" className="img-fluid" />}
               </div>
-              <div className="col-lg-6 ml-auto">
+              <div className={"col-lg-6 ml-auto" + (odd ? '' : ' order-lg-1')}>
                 {name && <h2 className="text-white mb-4 name">{name}</h2>}
-                <div className="bio pl-lg-5">
+                <div className={"bio" + (odd ? ' pl-lg-5' : ' pr-lg-5')}>
                   {title && <span className="text-uppercase text-primary d-block mb-3">{title}</span>}
                   {about && <p className="mb-4">{about}</p>}
                 </div>
@@ -33,25 +32,6 @@ export default function Speakers({title, description, speakers}) {
             </div>
           );
         })}
-
-        <div className="row align-items-center speaker">
-          <div className="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="images/person_2.jpg" alt="Image" className="img-fluid" />
-          </div>
-          <div className="col-lg-6 ml-auto order-lg-1">
-            <h2 className="text-white mb-4 name">Alex Anchor</h2>
-            <div className="bio pr-lg-5">
-              <span className="text-uppercase text-primary d-block mb-3">Web Designer</span>
-              <p className="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error deleniti dolores necessitatibus eligendi. Nesciunt repellendus ab voluptatibus. Minima architecto impedit eaque molestiae dicta quam. Cum ducimus. Culpa distinctio aperiam</p>
-              <p>
-                Follow Alex &mdash;
-                <a href="#" className="p-2"><span className="icon-facebook"></span></a>
-                <a href="#" className="p-2"><span className="icon-twitter"></span></a>
-                <a href="#" className="p-2"><span className="icon-github"></span></a>
-              </p>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
