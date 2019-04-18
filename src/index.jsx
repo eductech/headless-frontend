@@ -27,8 +27,7 @@ class App extends React.Component {
   }
 
   _renderComponent = ({ block: blockData }) => {
-    console.log(blockData);
-    
+
     const { key, Component, props } = findComponent(blockData);
 
     if (Component) {

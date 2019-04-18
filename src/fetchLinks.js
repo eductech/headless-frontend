@@ -10,10 +10,10 @@ const hero = [
   'hero.cta'
 ];
 
-const block = [
-  'block.title',
-  'block.description',
-  'block.list'
+const speakers = [
+  'speakers.title',
+  'speakers.description',
+  'speakers.speakers_list'
 ];
 
 const footer = [
@@ -50,7 +50,7 @@ const program = [
 const structure = [
   ...header,
   ...hero,
-  ...block,
+  ...speakers,
   ...footer,
   ...link,
   ...programs_li,

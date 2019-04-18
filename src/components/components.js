@@ -1,13 +1,15 @@
 import Header from './Header';
 import Hero from './Hero';
 import Speakers from './Speakers';
+import Programs from './Programs';
 import Footer from './Footer';
 
 import {
   header,
   hero,
   footer,
-  speakers
+  speakers,
+  programs
 } from '../models';
 
 const components = {
@@ -22,6 +24,10 @@ const components = {
   speakers: {
     component: Speakers,
     props: speakers
+  },
+  programs: {
+    component: Programs,
+    props: programs
   },
   footer: {
     component: Footer,

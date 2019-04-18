@@ -6,9 +6,12 @@ export function getLink(link) {
   };
 }
 
-export function getSpeaker(speaker) {
+export function getSpeaker({about, title, name, photo}) {
   return {
-
+    about: about[0].text,
+    title,
+    name: name[0].text,
+    photo: photo.url 
   };
 }
 
