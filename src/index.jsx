@@ -57,3 +57,5 @@ const AppWithHot = hot(module)(App);
 
 var mountNode = document.getElementById("app");
 ReactDOM.render(<AppWithHot />, mountNode);
+
+// I want to commit that message
