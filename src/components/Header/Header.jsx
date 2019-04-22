@@ -6,7 +6,7 @@ export default function Header({ title, links }) {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-2">
-            <h1 className="mb-0"><a href="index.html" className="text-white h2 mb-0">frontend<span className="text-primary">Month</span> </a></h1>
+            <h1 className="mb-0"><a href="index.html" className="text-white h2 mb-0">fe<span className="text-primary">Month</span> </a></h1>
           </div>
           <div className="col-10">
             <nav className="site-navigation position-relative text-right" role="navigation">
